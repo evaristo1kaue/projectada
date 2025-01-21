@@ -1,0 +1,20 @@
+import datetime
+import json
+import pyttsx3
+from selenium import webdriver
+
+driver = webdriver.Chrome()
+engine = pyttsx3.init()
+
+def speak(text):
+    engine.say(text)
+    engine.runAndWait()
+
+class SystemInfo:
+    def __init__(self):
+        pass
+    
+    def get_time(self):
+        now = datetime.datetime.now()
+        answer = 'Agora são {} horas e {} minutos.'.format(now.hour,now.minute)
+        return answer
